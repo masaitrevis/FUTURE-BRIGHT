@@ -38,13 +38,27 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <a
-              href="tel:+254700460814"
-              className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 text-sm font-semibold px-4 py-2 rounded transition-colors"
-            >
-              <Phone size={14} />
-              Book Now
-            </a>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/login"
+                className="text-sm font-medium text-white/80 hover:text-gold-400 transition-colors uppercase tracking-wider border border-white/20 hover:border-gold-400 px-4 py-2 rounded"
+              >
+                Log In
+              </Link>
+              <Link
+                href="/signup"
+                className="text-sm font-semibold bg-gold-500 hover:bg-gold-400 text-navy-950 px-4 py-2 rounded transition-colors uppercase tracking-wider"
+              >
+                Sign Up
+              </Link>
+              <a
+                href="tel:+254700460814"
+                className="inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-700 text-white text-sm font-semibold px-4 py-2 rounded transition-colors border border-white/10"
+              >
+                <Phone size={14} />
+                Book Now
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Toggle */}
@@ -72,13 +86,29 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <a
-              href="tel:+254700460814"
-              className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 text-sm font-semibold px-4 py-2 rounded transition-colors mt-2"
-            >
-              <Phone size={14} />
-              Book Now
-            </a>
+            <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="block text-sm font-medium text-white/80 hover:text-gold-400 transition-colors py-2 uppercase tracking-wider text-center border border-white/20 rounded"
+              >
+                Log In
+              </Link>
+              <Link
+                href="/signup"
+                onClick={() => setOpen(false)}
+                className="block text-sm font-semibold bg-gold-500 hover:bg-gold-400 text-navy-950 py-2 rounded transition-colors uppercase tracking-wider text-center"
+              >
+                Sign Up
+              </Link>
+              <a
+                href="tel:+254700460814"
+                className="inline-flex items-center justify-center gap-2 bg-navy-800 hover:bg-navy-700 text-white text-sm font-semibold py-2 rounded transition-colors border border-white/10"
+              >
+                <Phone size={14} />
+                Book Now
+              </a>
+            </div>
           </div>
         </div>
       )}
