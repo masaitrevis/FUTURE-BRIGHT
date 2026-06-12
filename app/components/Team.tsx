@@ -5,13 +5,13 @@ const team = [
     name: "Benjamin Masai",
     role: "CEO & Co-Founder",
     org: "Future Bright Ventures",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+    image: "/images/benjamin-masai.jpg",
   },
   {
     name: "Miriam Njeri",
     role: "Finance Director & Co-Founder",
     org: "Future Bright Ventures",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+    image: "/images/miriam-njeri.jpg",
   },
   {
     name: "Michael Kiptoo",
