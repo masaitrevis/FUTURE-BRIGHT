@@ -11,10 +11,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-display text-xl text-white font-semibold">
-              Bright Elite Tours <span className="text-gold-400">&</span> Travels
+              Future Bright <span className="text-gold-400">Ventures</span> Ltd
             </h3>
             <p className="text-sm text-white/60 leading-relaxed">
-              A subsidiary of <strong className="text-white/80">Future Bright Ventures Ltd</strong>. Premium Professional Mobility & Executive Transport Solutions in Nairobi, Kenya.
+              A holding company operating premium subsidiaries across mobility, property, education, and hospitality. Headquartered in Nairobi, Kenya.
             </p>
             <p className="text-xs text-gold-400 font-medium tracking-wider uppercase">
               Driven by Excellence
@@ -117,10 +117,10 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Bright Elite Tours and Travels. All rights reserved.
+            © {new Date().getFullYear()} Future Bright Ventures Ltd. All rights reserved.
           </p>
           <p className="text-xs text-white/40">
-            Subsidiary of Future Bright Ventures Ltd
+            Bright Elite Tours & Travels | Bright Homes | Bright Academy
           </p>
         </div>
       </div>

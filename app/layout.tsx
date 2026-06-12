@@ -11,24 +11,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Bright Elite Tours and Travels | Premium Executive Transport Nairobi",
+  title: "Future Bright Ventures Ltd | Premium Mobility, Property & Education",
   description:
-    "Premium Professional Mobility & Executive Transport Solutions. Executive chauffeur services, corporate driver outsourcing, elite driver training, and airport transfers in Nairobi, Kenya.",
+    "Future Bright Ventures Ltd - A holding company operating premium subsidiaries across mobility, property, education, and hospitality in Nairobi, Kenya and East Africa.",
   keywords: [
-    "chauffeur services",
+    "Future Bright Ventures",
+    "Bright Elite Tours",
+    "Bright Homes",
+    "Bright Academy",
     "executive transport",
     "corporate driver outsourcing",
     "driver training",
-    "airport transfers",
+    "property management",
     "Nairobi",
     "Kenya",
-    "VIP transport",
-    "fleet management",
   ],
-  authors: [{ name: "Bright Elite Tours and Travels" }],
+  authors: [{ name: "Future Bright Ventures Ltd" }],
   openGraph: {
-    title: "Bright Elite Tours and Travels",
-    description: "Premium Professional Mobility & Executive Transport Solutions",
+    title: "Future Bright Ventures Ltd",
+    description: "Premium Mobility, Property & Education Holdings",
     type: "website",
     locale: "en_KE",
   },

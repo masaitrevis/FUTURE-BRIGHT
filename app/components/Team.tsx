@@ -3,21 +3,57 @@ import { Linkedin } from "lucide-react";
 const team = [
   {
     name: "Benjamin Masai",
-    role: "CEO & Co-Founder",
+    role: "Chief Executive Officer (CEO) & Co-Founder",
     org: "Future Bright Ventures",
     image: "/images/benjamin-masai.jpg",
   },
   {
     name: "Miriam Njeri",
-    role: "Finance Director & Co-Founder",
+    role: "Co-Founder & Finance Director",
     org: "Future Bright Ventures",
     image: "/images/miriam-njeri.jpg",
   },
   {
+    name: "Trevis Masai",
+    role: "Director, ICT & Innovation",
+    org: "CEO & Co-Founder, NextBotics",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+  },
+  {
     name: "Michael Kiptoo",
-    role: "Head of Business Operations",
+    role: "Head of Business Operations & Strategy",
     org: "Bright Elite Tours & Travels",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+  },
+  {
+    name: "Grace Wanjiku",
+    role: "Head of Training & Leadership Development",
+    org: "Bright Academy",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+  },
+  {
+    name: "Mercy Wairimu",
+    role: "Head of Fleet Operations & Mobility Services",
+    org: "Future Bright Ventures",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+  },
+  {
+    name: "Esther Chebet",
+    role: "Head of Property & Real Estate",
+    org: "Bright Homes",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&q=80",
+  },
+  {
+    name: "Kevin Wambua",
+    role: "Head of Corporate Services, Environment & Sustainability",
+    org: "Future Bright Ventures",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
+  },
+  {
+    name: "Thomas Wafula",
+    role: "General Manager – Hospitality",
+    org: "Future Bright Ventures",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
   },
 ];
 
@@ -34,7 +70,7 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((t) => (
             <div
               key={t.name}
