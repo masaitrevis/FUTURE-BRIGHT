@@ -1,4 +1,13 @@
-import { Phone, Mail, MapPin, Instagram, Youtube, Facebook, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Send } from "lucide-react";
+
+// TikTok icon component
+function TikTokIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5A2.89 2.89 0 016.39 15a2.89 2.89 0 012.89-2.89c.3 0 .6.05.88.13v-3.5a6.35 6.35 0 00-.88-.06A6.39 6.39 0 002.89 15a6.39 6.39 0 006.39 6.39 6.39 6.39 0 006.39-6.39V8.17a8.18 8.18 0 004.77 1.53V6.39a4.81 4.81 0 01-1.84-.7z"/>
+    </svg>
+  );
+}
 
 export default function ContactPage() {
   return (
@@ -47,7 +56,7 @@ export default function ContactPage() {
                 <Mail size={22} className="text-gold-400" />
               </div>
               <h3 className="font-display text-sm font-semibold text-white uppercase tracking-wider mb-3">Email</h3>
-              <a href="mailto:info@fbrightventures.co.ke" className="text-sm text-white/70 hover:text-gold-400 transition-colors">info@fbrightventures.co.ke</a>
+              <a href="mailto:bmasai@fbrightventures.com" className="text-sm text-white/70 hover:text-gold-400 transition-colors">bmasai@fbrightventures.com</a>
             </div>
 
             <div className="bg-navy-900/60 border border-white/5 rounded-lg p-6 md:p-8 text-center">
@@ -55,8 +64,9 @@ export default function ContactPage() {
                 <MapPin size={22} className="text-gold-400" />
               </div>
               <h3 className="font-display text-sm font-semibold text-white uppercase tracking-wider mb-3">Location</h3>
+              <p className="text-sm text-white/70">Future Bright Centre, Embakasi</p>
+              <p className="text-sm text-white/70">P.O.BOX 121313, GPO-00100</p>
               <p className="text-sm text-white/70">Nairobi, Kenya</p>
-              <p className="text-sm text-white/70">East Africa</p>
             </div>
 
             <div className="bg-navy-900/60 border border-white/5 rounded-lg p-6 md:p-8 text-center">
@@ -68,8 +78,8 @@ export default function ContactPage() {
                 <a href="https://instagram.com/fbright.ventures" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-gold-400 transition-colors" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
-                <a href="https://youtube.com/@futurebrightventures" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-gold-400 transition-colors" aria-label="YouTube">
-                  <Youtube size={20} />
+                <a href="https://tiktok.com/@FUTUREBRIGHTVENTURES" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-gold-400 transition-colors" aria-label="TikTok">
+                  <TikTokIcon size={20} />
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-gold-400 transition-colors" aria-label="Facebook">
                   <Facebook size={20} />
