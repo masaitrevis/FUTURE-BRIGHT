@@ -7,9 +7,7 @@ const connectionString = process.env.DATABASE_URL;
 export const pool = connectionString
   ? new Pool({
       connectionString,
-      ssl: {
-        rejectUnauthorized: false, // Required for many cloud providers including Alwaysdata
-      },
+      ssl: false, // Alwaysdata free tier doesn't always need SSL
     })
   : null;
 
