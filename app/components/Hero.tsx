@@ -16,7 +16,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-32">
         <p className="text-gold-400 text-sm md:text-base uppercase tracking-[0.25em] font-semibold mb-4 md:mb-6">
-          Future Bright Ventures Ltd
+          Bright Elite Tours & Travels
         </p>
         <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
           Premium Professional Mobility{" "}
