@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -24,33 +23,25 @@ export default function Hero() {
         </h1>
         <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
           Driven by Excellence. Nairobi&apos;s trusted partner for executive
-          chauffeur services, corporate driver outsourcing, and elite driver
-          training.
+          chauffeur services and corporate driver outsourcing.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/contact"
+          <a
+            href="https://wa.me/254700460814"
             className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold px-8 py-3 rounded transition-colors"
           >
             Book Executive Transport
             <ArrowRight size={18} />
-          </Link>
-          <Link
-            href="/driver-training"
-            className="inline-flex items-center gap-2 border border-white/30 hover:border-gold-400 text-white font-semibold px-8 py-3 rounded transition-colors"
-          >
-            Explore Driver Training
-            <ChevronRight size={18} />
-          </Link>
+          </a>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 md:mt-24 border-t border-white/10 pt-8">
           {[
             { num: "5", label: "Core Services" },
-            { num: "3", label: "Certification Tiers" },
-            { num: "5", label: "Day Training Program" },
+            { num: "24/7", label: "Availability" },
             { num: "100%", label: "Professional Excellence" },
+            { num: "Kenya", label: "& East Africa" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="font-display text-2xl md:text-3xl font-bold text-gold-400">

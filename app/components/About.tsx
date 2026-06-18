@@ -1,12 +1,6 @@
-import { Award, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const values = ["Discipline", "Integrity", "Professionalism", "Safety", "Excellence"];
-
-const certifications = [
-  { code: "ECCD", name: "Elite Certified Corporate Driver", desc: "Foundation-level certification for corporate fleet readiness." },
-  { code: "EECC", name: "Elite Executive Chauffeur Certification", desc: "Advanced certification for executive and VIP-level service." },
-  { code: "ETMS", name: "Elite Tactical Mobility Specialist", desc: "Elite tier for high-risk, diplomatic, and tactical transport." },
-];
 
 export default function About() {
   return (
@@ -21,10 +15,6 @@ export default function About() {
                 alt="Executive transport on a Kenyan road"
                 className="w-full h-80 md:h-[28rem] object-cover"
               />
-            </div>
-            <div className="absolute -bottom-6 -right-4 md:-right-6 bg-navy-950 border border-gold-400/30 rounded-lg p-5 md:p-6 max-w-[260px]">
-              <p className="font-display text-2xl md:text-3xl font-bold text-gold-400">5</p>
-              <p className="text-xs md:text-sm text-white/70">Days of intensive Elite Driver Training</p>
             </div>
           </div>
 
@@ -57,31 +47,6 @@ export default function About() {
                     <CheckCircle size={14} className="text-gold-400" />
                     {v}
                   </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Certifications */}
-            <div>
-              <p className="text-sm text-white/50 uppercase tracking-wider font-semibold mb-3">
-                Certification Framework
-              </p>
-              <div className="space-y-3">
-                {certifications.map((c) => (
-                  <div
-                    key={c.code}
-                    className="flex items-start gap-3 bg-navy-950/60 border border-white/5 rounded-lg p-3"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-gold-500/10 flex items-center justify-center shrink-0">
-                      <Award size={16} className="text-gold-400" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-white">
-                        {c.code} — {c.name}
-                      </p>
-                      <p className="text-xs text-white/50">{c.desc}</p>
-                    </div>
-                  </div>
                 ))}
               </div>
             </div>

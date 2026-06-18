@@ -1,4 +1,7 @@
-import { Phone, Mail, MapPin, Instagram, Facebook, Send } from "lucide-react";
+"use client";
+
+import { useState, FormEvent } from "react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 // TikTok icon component
 function TikTokIcon({ size = 20 }: { size?: number }) {
@@ -10,6 +13,38 @@ function TikTokIcon({ size = 20 }: { size?: number }) {
 }
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/5c530529-bf88-47f8-a24e-7abeec54d328", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="pt-20">
       {/* Hero */}
@@ -92,38 +127,69 @@ export default function ContactPage() {
           <div className="max-w-2xl mx-auto bg-navy-900/60 border border-white/5 rounded-lg p-6 md:p-10">
             <h2 className="font-display text-2xl font-bold text-white text-center mb-2">Send a Message</h2>
             <p className="text-sm text-white/50 text-center mb-8">We will get back to you within 24 hours.</p>
-            <form className="space-y-5">
+
+            {status === "success" && (
+              <div className="mb-6 bg-green-500/10 border border-green-500/30 rounded-lg p-4 flex items-start gap-3">
+                <CheckCircle size={18} className="text-green-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-green-400">Message Sent!</p>
+                  <p className="text-xs text-green-300/70">Thank you for reaching out. We will be in touch soon.</p>
+                </div>
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className="mb-6 bg-red-500/10 border border-red-500/30 rounded-lg p-4 flex items-start gap-3">
+                <AlertCircle size={18} className="text-red-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-semibold text-red-400">Failed to send</p>
+                  <p className="text-xs text-red-300/70">{errorMsg}</p>
+                </div>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Name</label>
-                  <input type="text" placeholder="Your name" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors" />
+                  <label htmlFor="name" className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Name</label>
+                  <input id="name" name="name" type="text" required placeholder="Your name" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Phone</label>
-                  <input type="tel" placeholder="+254 7XX XXX XXX" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors" />
+                  <label htmlFor="phone" className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+254 7XX XXX XXX" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors" />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Email</label>
-                <input type="email" placeholder="you@company.com" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors" />
+                <label htmlFor="email" className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@company.com" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Interest</label>
-                <select className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400/50 transition-colors">
+                <label htmlFor="interest" className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Interest</label>
+                <select id="interest" name="interest" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400/50 transition-colors">
                   <option>Executive Chauffeur Services</option>
                   <option>Corporate Driver Outsourcing</option>
-                  <option>Elite Driver Training</option>
                   <option>Airport Transfers</option>
                   <option>Tours & Travel</option>
                   <option>Other</option>
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Message</label>
-                <textarea rows={4} placeholder="How can we help you?" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors resize-none"></textarea>
+                <label htmlFor="message" className="block text-xs font-semibold text-white/70 uppercase tracking-wider mb-2">Message</label>
+                <textarea id="message" name="message" rows={4} required placeholder="How can we help you?" className="w-full bg-navy-950 border border-white/10 rounded px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-gold-400/50 transition-colors resize-none"></textarea>
               </div>
-              <button type="button" className="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold py-3 rounded transition-colors">
-                Send Message
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="w-full bg-gold-500 hover:bg-gold-400 disabled:opacity-60 disabled:cursor-not-allowed text-navy-950 font-semibold py-3 rounded transition-colors inline-flex items-center justify-center gap-2"
+              >
+                {status === "submitting" ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>

@@ -13,7 +13,6 @@ import {
   Shield,
   CheckCircle,
   LogOut,
-  ChevronRight,
   BookOpen,
   Star,
   AlertTriangle,
@@ -291,19 +290,15 @@ export default function DriverDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-display font-semibold text-white mb-1">
-                    5-Day Elite Driver Training
+                    Bright Academy Training
                   </h3>
                   <p className="text-sm text-white/50">
-                    Intensive certification program for corporate drivers, chauffeurs, and mobility specialists.
+                    Driver training and certification programs are now offered through Bright Academy. Coming soon.
                   </p>
                 </div>
-                <button
-                  onClick={() => router.push("/driver-training")}
-                  className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm shrink-0"
-                >
-                  View Program
-                  <ChevronRight size={16} />
-                </button>
+                <span className="inline-flex items-center gap-2 bg-navy-800 text-white/70 text-sm font-medium px-4 py-2 rounded-lg shrink-0 border border-white/10">
+                  Coming Soon
+                </span>
               </div>
             </div>
 

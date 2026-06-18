@@ -9,7 +9,6 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/driver-training", label: "Driver Training" },
     { href: "/contact", label: "Contact" },
     { href: "/login", label: "Login" },
     { href: "/signup", label: "Sign Up" },

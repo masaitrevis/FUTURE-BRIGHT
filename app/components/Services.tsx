@@ -19,8 +19,9 @@ const services = [
     icon: GraduationCap,
     title: "Elite Driver Training & Certification",
     description:
-      "Our 5-day intensive program produces certified drivers across three tiers: ECCD, EECC, and ETMS. Defensive driving, VIP protocol, and more.",
+      "Professional driver training and certification programs are now available through Bright Academy. Coming soon.",
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80",
+    comingSoon: true,
   },
   {
     icon: Plane,
@@ -69,9 +70,16 @@ export default function Services() {
                   <div className="w-10 h-10 rounded bg-gold-500/10 flex items-center justify-center">
                     <s.icon size={20} className="text-gold-400" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-white leading-snug">
-                    {s.title}
-                  </h3>
+                  <div className="flex-1">
+                    <h3 className="font-display text-lg font-semibold text-white leading-snug">
+                      {s.title}
+                    </h3>
+                  </div>
+                  {"comingSoon" in s && s.comingSoon && (
+                    <span className="text-[10px] bg-gold-500/10 text-gold-400 border border-gold-400/30 px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold shrink-0">
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
                 <p className="text-sm text-white/60 leading-relaxed">
                   {s.description}
